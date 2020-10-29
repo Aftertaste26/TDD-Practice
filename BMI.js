@@ -13,6 +13,20 @@ const metricBMI = (weight, height) => {
   return { weight, height, bmi, status };
 };
 
-console.log(metricBMI(60, 167));
+const englishBMI = (weight, { feet, inches }) => {
+  const height = { feet, inches };
+  const bmi = ((703 * weight) / (feet * 12 + inches)) ^ 2;
 
-module.exports = metricBMI;
+  const status =
+    bmi < 18.5
+      ? "Underweight"
+      : bmi >= 18.5 && bmi <= 24.9
+      ? "Normal weight"
+      : bmi >= 25 && bmi <= 29.9
+      ? "Overweight"
+      : "Obesity";
+
+  return { weight, height, bmi, status };
+};
+
+module.exports = { metricBMI, englishBMI };
