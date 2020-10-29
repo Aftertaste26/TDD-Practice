@@ -23,7 +23,7 @@ const weightStatus = (bmi) =>
     : "Obesity";
 
 const bmi = (weight, height, unitType) => {
-  switch (unitType) {
+  switch (unitType.toUpperCase()) {
     case "ENGLISH":
       return englishBMI(weight, height);
     case "METRIC":
