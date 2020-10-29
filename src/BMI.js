@@ -22,4 +22,13 @@ const weightStatus = (bmi) =>
     ? "Overweight"
     : "Obesity";
 
-module.exports = { metricBMI, englishBMI };
+const bmi = (weight, height, unitType) => {
+  switch (unitType) {
+    case "ENGLISH":
+      return englishBMI(weight, height);
+    case "METRIC":
+      return metricBMI(weight, height);
+  }
+};
+
+module.exports = { metricBMI, englishBMI, bmi };
