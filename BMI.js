@@ -1,5 +1,5 @@
 const metricBMI = (weight, height) => {
-  const bmi = weight / ((height / 100) ^ 2);
+  const bmi = parseFloat((weight / Math.pow(height / 100, 2)).toFixed(1));
 
   if (bmi < 18.5) return { weight, height, bmi, status: "Underweight" };
   if (bmi >= 18.5 && bmi <= 24.9)
