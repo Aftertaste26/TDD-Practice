@@ -5,7 +5,7 @@ describe("get BMI", () => {
     expect(metricBMI(60, 167)).toBe({
       bmi: 21.5,
       height: 167,
-      status: "Normal",
+      status: "Normal weight",
       weight: 60,
     });
   });
