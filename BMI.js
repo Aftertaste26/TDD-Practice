@@ -15,7 +15,9 @@ const metricBMI = (weight, height) => {
 
 const englishBMI = (weight, { feet, inches }) => {
   const height = { feet, inches };
-  const bmi = ((703 * weight) / (feet * 12 + inches)) ^ 2;
+  const bmi = parseFloat(
+    ((703 * weight) / Math.pow(feet * 12 + inches, 2)).toFixed(1)
+  );
 
   const status =
     bmi < 18.5
