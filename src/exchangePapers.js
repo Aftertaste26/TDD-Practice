@@ -13,4 +13,14 @@ const swap = (classRoll) => {
   return output;
 };
 
-module.exports = { swap };
+const counterClockWise = (n, classroll) => {
+  let output = [];
+  for (let index = 0; index < classroll.length; index++) {
+    output[index] =
+      classroll[(classroll.length - n + index) % classroll.length];
+  }
+
+  return output;
+};
+
+module.exports = { swap, counterClockWise };
